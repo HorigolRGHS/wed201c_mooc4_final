@@ -1,0 +1,106 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #dedede;
+    padding: 5px;
+    margin: 15px;
+    font-size: 25px;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 1.95em;
+}
+
+h2 {
+    text-align: center;
+}
+
+li {
+    margin-top: 20px;
+}
+
+img {
+    border: 5px solid blue;
+    border-radius: 35px;
+    width: 100%;
+}
+
+figure {
+    text-align: center;
+}
+
+.label {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.grid {
+    display: grid;
+    row-gap: 10px;
+    column-gap: 10px;
+}
+
+
+@media screen and (min-width: 772px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .grid figure img {
+        border: 4px solid rgb(255, 0, 0);
+        border-radius: 50%;
+    }
+
+    .grid figure figcaption {
+        border: 1px solid black;
+    }
+
+    /* Chọn phần tử cuối cùng của lưới */
+    .grid figure:last-child {
+        grid-column: span 2;
+    }
+
+}
+
+@media screen and (min-width: 992px) {
+    .grid {
+        justify-items: center;
+    }
+
+    .grid figure {
+        width: 50%;
+    }
+
+    .grid figure:nth-child(3n) {
+        grid-column: span 2;
+    }
+
+    .grid figure img {
+        border: 4px solid rgb(0, 255, 38);
+        border-radius: 0;
+    }
+}
+
+@media screen and (prefers-reduced-motion) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+
+@media screen and (prefers-color-scheme: dark) {
+    body {
+        background-color: rgb(45, 64, 82);
+        color: white;
+    }
+
+    .grid figure figcaption {
+        background-color: black;
+        color: rgb(228, 250, 195)
+    }
+}
